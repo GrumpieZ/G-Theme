@@ -1,0 +1,86 @@
+{{ define "title" }}{{ .Site.Title }}{{ end}}
+{{ define "header_css" }}{{ end }}
+{{ define "body_classes" }}page-home{{ end }}
+{{ define "header_classes" }}header-transparent{{ end }}
+
+{{ define "meta_tags" }}
+<meta name="description" content="{{ .Site.Params.homepage_meta_tags.meta_description }}" />
+<meta property="og:title" content="{{ .Site.Params.homepage_meta_tags.meta_og_title }}" />
+<meta property="og:type" content="{{ .Site.Params.homepage_meta_tags.meta_og_type }}" />
+<meta property="og:url" content="{{ .Site.Params.homepage_meta_tags.meta_og_url }}" />
+<meta property="og:image" content="{{ .Site.Params.homepage_meta_tags.meta_og_image }}" />
+<meta property="og:description" content="{{ .Site.Params.homepage_meta_tags.meta_og_description }}" />
+<meta name="twitter:card" content="{{ .Site.Params.homepage_meta_tags.meta_twitter_card }}" />
+<meta name="twitter:site" content="{{ .Site.Params.homepage_meta_tags.meta_twitter_site }}" />
+<meta name="twitter:creator" content="{{ .Site.Params.homepage_meta_tags.meta_twitter_creator }}" />
+{{ end }}
+
+{{ define "main" }}
+
+{{ partial "hero-image-fullscreen.html" (dict "background" .Params.heroBackground "heading" .Params.heroHeading "subheading" .Params.heroSubHeading "content" .)}}
+
+{{ $headless := .Site.GetPage "/homepage" }}
+{{ $reusablePages := $headless.Resources.ByType "page" }}
+{{ $reusablePages := sort $reusablePages ".Params.weight" }}
+{{ range first 1 $reusablePages }}
+<div class="strip bg-cover bg-position-top bg-overlay" style="background-image: url('{{ .Params.background | relURL }}');">
+  <div class="container pt-17 pb-17">
+    <div class="row">
+      <div class="col-12 col-md-6 offset-md-6">
+        <h2 class="text-primary text-capitalize">{{ .Title }}</h2>
+        <p>{{ .Content }}</p>
+        <a class="button" href="{{ .Params.buttonLink | relURL }}">{{ .Params.button }}</a>
+      </div>
+    </div>
+  </div>
+</div>
+{{ end }}
+
+{{ $services := where (where .Site.RegularPages "Type" "services") ".Params.featured" true }}
+{{if gt (len $services) 0}}
+<div id="home" class="container pt-8 pb-8 pb-md-14 pt-md-14">
+  <div class="row justify-content-start">
+    <div class="col-12 col-md-6">
+      <p>
+        GrumpieZ is a CC0 project giving all governance power to GrumpyDAO. Inspired by Nouns.wtf on Ethereum and the recent on-goings on Solana in Q1 of 2023 we felt it needed change.
+      </p>
+      <p>
+        GrumpieZ Holders govern GrumpyDAO as well as the treasury. Proposals can be submitted by any holder of 5 GrumpieZ or more and one NFT will act as one vote against each proposal. We aim to create a truly fair governance model similar to nouns which doesn't have a board nor executive body. Utilizing the CC0 IP allows us to waive copyright and allow anyone to utilize our IP in the public domain to further strengthen our brand.
+      </p>
+      <p>Reject happiness, return to grumpy! Stay tuned to our twitter for updates</p>
+  </div>
+  <div class="icons">
+        {{ range first 6 (sort $services ".Params.weight") }}
+    <div class="">
+      {{ .Render "summary" }}
+    </div>
+    {{ end }}
+  </div>
+
+    <div class="col-12 text-center">
+      <a class="button button-primary" href="https://twitter.com/SolanaGrumpieZ" target="blank">Twitter</a>
+      <a class="button button-primary" href="https://www.subber.xyz/grumpydao" target="blank">Subber</a>
+      <a class="button button-primary" href="mailto:collab@grumpydao.com" target="blank">Email</a>
+    </div>
+  </div>
+</div>
+{{end}}
+
+{{ range first 1 (after 1 $reusablePages) }}
+<!-- <div id="home" class="strip bg-primary bg-cover bg-position-top bg-overlay" style='background-image: url("{{ .Params.background | relURL }}");'>
+  <div class="container pt-8 pb-8 pb-md-12 pt-md-12">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-8 text-center text-white">
+        <h2>{{ .Title }}</h2>
+        {{ .Content }}
+        <a class="button button-white" href="{{ .Params.buttonLink | relURL }}">{{ .Params.button }}</a>
+      </div>
+    </div>
+  </div>
+</div> -->
+{{ end }}
+
+{{ end }}
+
+{{ define "footer_js" }}
+{{ end }}
