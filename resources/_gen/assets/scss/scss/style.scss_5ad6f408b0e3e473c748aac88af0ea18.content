@@ -5577,14 +5577,12 @@ ol {
     height: 100%; }
 
 .logo-mobile {
-  display: block;
-  width: 40px;
-  padding: 10px 0 10px 0; }
+  display: block; }
   @media (min-width: 576px) {
     .logo-mobile {
       display: none; } }
   .logo-mobile img {
-    width: 100%;
+    width: 160px;
     height: auto; }
   .logo-mobile a {
     display: block;
@@ -6088,21 +6086,20 @@ html {
       line-height: 1.4;
       margin-bottom: 40px;
       font-weight: 300; } }
-.service-summary {
-  margin: 0 20px 20px 20px; }
-  .service-summary .service-image img {
-    height: auto;
-    border-radius: 50%;
-    box-shadow: 4px 3px 8px #00000087; }
-  .service-summary .service-content {
-    flex: 1; }
-    .service-summary .service-content .service-title {
-      font-family: "Phudu", "Helvetica Neue", Arial, sans-serif, -apple-system;
-      font-size: 1.5rem; }
-    .service-summary .service-content p {
-      color: #666;
-      font-size: 0.9rem;
-      width: 90%; }
+.icons img {
+  height: auto;
+  border-radius: 50%;
+  box-shadow: 4px 3px 8px #00000087; }
+
+.icons .service-content {
+  flex: 1; }
+  .icons .service-content .service-title {
+    font-family: "Phudu", "Helvetica Neue", Arial, sans-serif, -apple-system;
+    font-size: 1.5rem; }
+  .icons .service-content p {
+    color: #666;
+    font-size: 0.9rem;
+    width: 90%; }
 
 .work-summary {
   display: flex;
@@ -6153,17 +6150,29 @@ html {
 .hamburger {
   display: none !important; }
 
+.home-con {
+  display: block;
+  text-align: center; }
+  @media (min-width: 768px) {
+    .home-con {
+      display: flex;
+      margin-bottom: 60px;
+      text-align: left; } }
+.text {
+  width: 100%; }
+  @media (min-width: 768px) {
+    .text {
+      width: 50%; } }
 .icons {
-  display: flex;
-  max-width: 100%;
-  flex-wrap: wrap; }
+  width: 100%; }
   @media (min-width: 768px) {
     .icons {
       width: 50%; } }
-.icons div {
-  width: 33.333%; }
+  .icons img {
+    max-width: 33.33%;
+    margin: 10px; }
 
-.service-image img {
-  max-width: 160px; }
+.button {
+  margin: 7px; }
 
 /*# sourceMappingURL=style.css.map */

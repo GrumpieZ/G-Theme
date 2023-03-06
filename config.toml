@@ -1,4 +1,4 @@
-aseURL = "//grumpiez.github.io"
+aseURL = "//grumpydao.com/"
 languageCode = "en-us"
 title = "GrumpieZ"
 themeDir = "themes"
@@ -14,12 +14,10 @@ theme = "hugo-hero-theme"
 
   [params.logo]
     mobile = "images/logo.png"
-    mobile_height = "36px"
-    mobile_width = "36px"
     desktop = "images/logo.png"
     desktop_height = "29px"
     desktop_width = "280px"
-    alt = "Hugo Hero"
+    alt = ""
 
   [params.homepage_meta_tags]
     meta_description = ""

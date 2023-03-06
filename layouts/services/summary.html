@@ -1,8 +1,5 @@
-<div class="service service-summary">
   {{ if .Params.icon }}
-  <div class="service-image">
     <img height="" width="" src="{{ .Params.icon | relURL }}" alt="{{ .Title }}" />
-  </div>
   {{ end }}
 <!--   <div class="service-content">
     <h2 class="service-title">
@@ -10,4 +7,3 @@
     </h2>
     {{ .Content | truncate 120 "..." }}
   </div> -->
-</div>
