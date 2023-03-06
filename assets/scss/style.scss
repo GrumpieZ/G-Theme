@@ -74,22 +74,37 @@
 	display: none!important;
 }
 
-.icons {
-	display: flex;
-    max-width: 100%;
-    flex-wrap: wrap;
-    @include media-breakpoint-up(md) {
+.home-con {
+  display: block;
+  text-align: center;
+  @include media-breakpoint-up(md) {
+  	display: flex;
+  	margin-bottom: 60px;
+  	text-align: left;
+  }
+}
+
+.text {
+	width: 100%; 
+	@include media-breakpoint-up(md) {
     	width: 50%
     }
 }
-.icons div {
-	width: 33.333%
+
+.icons {
+    width: 100%;
+    @include media-breakpoint-up(md) {
+    	width: 50%
+    }
+    img {
+    	max-width: 33.33%;
+    	margin: 10px;
+    }
 }
 
-.service-image img {
-	max-width: 160px;
+.button {
+	margin: 7px;
 }
-
 
 
 // Display breakpoints for DEV

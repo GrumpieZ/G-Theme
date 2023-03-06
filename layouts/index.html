@@ -38,9 +38,8 @@
 
 {{ $services := where (where .Site.RegularPages "Type" "services") ".Params.featured" true }}
 {{if gt (len $services) 0}}
-<div id="home" class="container pt-8 pb-8 pb-md-14 pt-md-14">
-  <div class="row justify-content-start">
-    <div class="col-12 col-md-6">
+<div id="home" class="home-con container pt-8 pt-md-14">
+  <div class="text">
       <p>
         GrumpieZ is a CC0 project giving all governance power to GrumpyDAO. Inspired by Nouns.wtf on Ethereum and the recent on-goings on Solana in Q1 of 2023 we felt it needed change.
       </p>
@@ -50,21 +49,21 @@
       <p>Reject happiness, return to grumpy! Stay tuned to our twitter for updates</p>
   </div>
   <div class="icons">
-        {{ range first 6 (sort $services ".Params.weight") }}
-    <div class="">
-      {{ .Render "summary" }}
-    </div>
+        {{ range first 4 (sort $services ".Params.weight") }}
+        
+          {{ .Render "summary" }}
+        
     {{ end }}
   </div>
+</div>
 
-    <div class="col-12 text-center">
+    <div class="col-12 text-center pb-8 pb-md-14">
       <a class="button button-primary" href="https://twitter.com/SolanaGrumpieZ" target="blank">Twitter</a>
       <a class="button button-primary" href="https://www.subber.xyz/grumpydao" target="blank">Subber</a>
       <a class="button button-primary" href="https://discord.gg/GrumpyDAO" target="blank">Discord</a>
       <a class="button button-primary" href="mailto:collab@grumpydao.com" target="blank">Email</a>
     </div>
   </div>
-</div>
 {{end}}
 
 {{ range first 1 (after 1 $reusablePages) }}
