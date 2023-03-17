@@ -16,9 +16,9 @@
         font-weight: regular;
         text-transform: uppercase;
         text-decoration: none;
-        color: $primary;
+        background: $primary;
+        color: #ffffff;
         &:hover {
-          background: $primary;
           color: #ffffff;
           text-decoration: none;
         }

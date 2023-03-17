@@ -30,7 +30,11 @@ theme = "hugo-hero-theme"
     meta_twitter_site = "@"
     meta_twitter_creator = "@"
 
+
 [[menu.main]]
+    name = "Governance"
+    url = "/work/"
+    weight = 1
 
 
 [permalinks]
