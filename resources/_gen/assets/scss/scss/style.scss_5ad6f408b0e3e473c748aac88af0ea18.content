@@ -5444,7 +5444,7 @@ ol {
   height: 60px; }
   .header .container {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center; }
   .header.header-absolute {
     position: absolute;
@@ -5607,9 +5607,9 @@ ol {
         font-weight: regular;
         text-transform: uppercase;
         text-decoration: none;
-        color: #3dbab5; }
+        background: #3dbab5;
+        color: #ffffff; }
         .main-menu > ul > li > a:hover {
-          background: #3dbab5;
           color: #ffffff;
           text-decoration: none; }
       .main-menu > ul > li.active > a {
@@ -6174,5 +6174,10 @@ html {
 
 .button {
   margin: 7px; }
+
+.disabled {
+  cursor: not-allowed;
+  background: rgba(61, 186, 181, 0.4) !important;
+  pointer-events: none; }
 
 /*# sourceMappingURL=style.css.map */
